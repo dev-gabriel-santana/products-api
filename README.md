@@ -45,6 +45,7 @@ A aplicação sobe por padrão em `http://localhost:8080`.
 | Método | Rota             | Descrição                                   |
 |--------|------------------|----------------------------------------------|
 | POST   | `/products`      | Cadastra um novo produto (o `id` é gerado)   |
+| GET    | `/products?name=`| Busca produtos pelo nome (contém o termo)    |
 | GET    | `/products/{id}` | Busca um produto pelo ID                     |
 | PUT    | `/products/{id}` | Atualiza um produto existente                |
 | DELETE | `/products/{id}` | Remove um produto pelo ID                    |
@@ -68,6 +69,7 @@ Exemplos:
 
 ```bash
 curl http://localhost:8080/products/{id}
+curl "http://localhost:8080/products?name=Note"
 curl -X PUT http://localhost:8080/products/{id} -H "Content-Type: application/json" \
   -d '{"name":"Notebook","description":"Novo","price":3200.00}'
 curl -X DELETE http://localhost:8080/products/{id}
