@@ -19,8 +19,10 @@ src/main/java/com/example/produtosapi
 ├── ProdutosapiApplication.java   # Classe principal (entry point)
 ├── controller
 │   └── ProductController.java   # Endpoints REST de produtos
-└── model
-    └── Product.java              # Entidade/POJO de produto
+├── model
+│   └── Product.java              # Entidade/POJO de produto
+└── repository
+    └── ProductRepository.java    # Acesso a dados (Spring Data JPA)
 ```
 
 ## ▶️ Como executar
@@ -40,22 +42,35 @@ A aplicação sobe por padrão em `http://localhost:8080`.
 
 ## 📌 Endpoints
 
-| Método | Rota        | Descrição                  |
-|--------|-------------|-----------------------------|
-| POST   | `/products` | Cadastra um novo produto    |
+| Método | Rota             | Descrição                                   |
+|--------|------------------|----------------------------------------------|
+| POST   | `/products`      | Cadastra um novo produto (o `id` é gerado)   |
+| GET    | `/products/{id}` | Busca um produto pelo ID                     |
+| PUT    | `/products/{id}` | Atualiza um produto existente                |
+| DELETE | `/products/{id}` | Remove um produto pelo ID                    |
 
-Exemplo de requisição:
+Exemplo de requisição (POST e PUT):
 
 ```json
 POST /products
 Content-Type: application/json
 
 {
-  "id": "1",
   "name": "Notebook",
   "description": "Notebook 15 polegadas",
   "price": 3500.00
 }
+```
+
+> No `POST`, o `id` é gerado automaticamente (UUID). No `PUT`, o `id` da URL é utilizado.
+
+Exemplos:
+
+```bash
+curl http://localhost:8080/products/{id}
+curl -X PUT http://localhost:8080/products/{id} -H "Content-Type: application/json" \
+  -d '{"name":"Notebook","description":"Novo","price":3200.00}'
+curl -X DELETE http://localhost:8080/products/{id}
 ```
 
 ## 🧪 Testes
