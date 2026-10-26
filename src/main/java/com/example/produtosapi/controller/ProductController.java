@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
 
     @PostMapping
-    public void store(@RequestBody Product product){
+    public Product store(@RequestBody Product product){
         System.out.println("Product" + product);
+        return product;
     }
 
 }

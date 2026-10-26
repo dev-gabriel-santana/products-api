@@ -70,6 +70,10 @@ service-account*.json
 *.mv.db
 *.trace.db
 *.h2.db
+*.sql.gz
+*.dump
+*.sql.bak
+data/
 
 ### Logs e temporários ###
 *.log
