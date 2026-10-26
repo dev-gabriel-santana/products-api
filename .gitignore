@@ -1,0 +1,81 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Segurança: segredos e credenciais ###
+.env
+.env.*
+!.env.example
+*.env
+application-local.properties
+application-local.yml
+application-secret*.properties
+application-secret*.yml
+application-dev.properties
+application-dev.yml
+application-prod.properties
+application-prod.yml
+src/main/resources/application-*.properties
+src/main/resources/application-*.yml
+!src/main/resources/application-example.*
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.crt
+*.cer
+id_rsa*
+id_ed25519*
+*.gpg
+credentials*.json
+service-account*.json
+
+### Bancos de dados locais ###
+*.db
+*.sqlite
+*.sqlite3
+*.mv.db
+*.trace.db
+*.h2.db
+
+### Logs e temporários ###
+*.log
+logs/
+*.tmp
+*.bak
+*.swp
+.DS_Store
+*.hprof
